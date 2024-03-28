@@ -10,7 +10,7 @@ use pyo3::prelude::*;
 use pyo3::wrap_pyfunction;
 use svg2pdf;
 use svg2pdf::usvg::{fontdb, PostProcessingSteps, TreeParsing, TreePostProc};
-use usvg;
+// use usvg;
 // >>>> ********************************************************************************
 
 // ________________________________________________________________________________

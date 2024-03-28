@@ -14,7 +14,7 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-usvg = "0.40.0"
+#usvg = "0.40.0"
 svg2pdf = "0.10.0"
 
 [dependencies.pyo3]

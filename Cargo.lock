@@ -1002,16 +1002,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "kurbo"
-version = "0.10.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1618d4ebd923e97d67e7cd363d80aef35fe961005cbbbb3d2dad8bdd1bc63440"
-dependencies = [
- "arrayvec",
- "smallvec",
-]
-
-[[package]]
 name = "lazy_static"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1568,7 +1558,6 @@ dependencies = [
  "maturin",
  "pyo3",
  "svg2pdf",
- "usvg 0.40.0",
 ]
 
 [[package]]
@@ -1733,9 +1722,9 @@ dependencies = [
  "pico-args",
  "png",
  "rgb",
- "svgtypes 0.13.0",
+ "svgtypes",
  "tiny-skia",
- "usvg 0.38.0",
+ "usvg",
 ]
 
 [[package]]
@@ -2094,7 +2083,7 @@ dependencies = [
  "pdf-writer",
  "resvg",
  "tiny-skia",
- "usvg 0.38.0",
+ "usvg",
 ]
 
 [[package]]
@@ -2103,17 +2092,7 @@ version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6e44e288cd960318917cbd540340968b90becc8bc81f171345d706e7a89d9d70"
 dependencies = [
- "kurbo 0.9.5",
- "siphasher",
-]
-
-[[package]]
-name = "svgtypes"
-version = "0.14.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59d7618f12b51be8171a7cfdda1e7a93f79cbc57c4e7adf89a749cf671125241"
-dependencies = [
- "kurbo 0.10.4",
+ "kurbo",
  "siphasher",
 ]
 
@@ -2578,33 +2557,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "usvg"
-version = "0.40.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c04150a94f0bfc3b2c15d4e151524d14cd06765fc6641d8b1c59a248360d4474"
-dependencies = [
- "base64 0.21.7",
- "data-url",
- "flate2",
- "fontdb",
- "imagesize",
- "kurbo 0.9.5",
- "log",
- "pico-args",
- "roxmltree",
- "rustybuzz",
- "simplecss",
- "siphasher",
- "strict-num",
- "svgtypes 0.14.0",
- "tiny-skia-path",
- "unicode-bidi",
- "unicode-script",
- "unicode-vo",
- "xmlwriter",
-]
-
-[[package]]
 name = "usvg-parser"
 version = "0.38.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2613,12 +2565,12 @@ dependencies = [
  "data-url",
  "flate2",
  "imagesize",
- "kurbo 0.9.5",
+ "kurbo",
  "log",
  "roxmltree",
  "simplecss",
  "siphasher",
- "svgtypes 0.13.0",
+ "svgtypes",
  "usvg-tree",
 ]
 
@@ -2629,7 +2581,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8c41888b9d5cf431fe852eaf9d047bbde83251b98f1749c2f08b1071e6db46e2"
 dependencies = [
  "fontdb",
- "kurbo 0.9.5",
+ "kurbo",
  "log",
  "rustybuzz",
  "unicode-bidi",
@@ -2645,7 +2597,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "18863e0404ed153d6e56362c5b1146db9f4f262a3244e3cf2dbe7d8a85909f05"
 dependencies = [
  "strict-num",
- "svgtypes 0.13.0",
+ "svgtypes",
  "tiny-skia-path",
 ]
 
