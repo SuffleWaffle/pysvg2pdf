@@ -19,13 +19,6 @@ use usvg;
 fn get_pdf_path_from_svg_path(
     input_filepath: String,
     output_filepath: String) -> PyResult<()> {
-    /// Converts the SVG file to PDF file
-    /// --- Input:
-    /// input_filepath: str - input SVG file path
-    /// output_filepath: str - output PDF file path
-    /// --- Output:
-    /// no return value
-    
     // ________________________________________________________________________________
     // Read the SVG file into a string
     let svg_string: String = std::fs::read_to_string(&input_filepath)
@@ -63,13 +56,8 @@ fn get_pdf_path_from_svg_path(
 // ________________________________________________________________________________
 // --- Converts the SVG string to a PDF Vec<u8>
 #[pyfunction]
-fn get_pdf_bytes_from_svg_string(svg_string: String) -> PyResult<Vec<u8>> {
-    /// Converts the SVG string to a PDF bytes
-    /// --- Input:
-    /// svg_string: str - SVG string of the SVG file
-    /// --- Output:
-    /// pdf_bytes: bytes - PDF bytes of the resulting PDF
-    
+fn get_pdf_bytes_from_svg_string(
+    svg_string: String) -> PyResult<Vec<u8>> {
     // - Start the timer
     // let start: Instant = Instant::now();
 
