@@ -1,6 +1,6 @@
 # pysvg2pdf
 
-_**Blazingly Fast**_ :tm: SVG to PDF file conversion for Python.
+_**Blazingly Fast :tm:**_  SVG to PDF file conversion for Python.
 
 This project is based on Rust's [svg2pdf](https://github.com/typst/svg2pdf) and [resvg](https://github.com/RazrFalcon/resvg) projects.
 

@@ -33,23 +33,20 @@ fn get_pdf_path_from_svg_path(
 
     // ________________________________________________________________________________
     // - Create usvg::Options with default settings for parsing the SVG string to a usvg::Tree
-    let options = svg2pdf::usvg::Options::default()
-        .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+    let options = svg2pdf::usvg::Options::default();
 
     // - Create usvg::Tree from the SVG string
     let mut svg_tree = svg2pdf::usvg::Tree::from_str(&svg_string, &options)
         .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
 
     // - Create a font database and load system fonts
-    let mut db = fontdb::Database::new()
-        .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+    let mut db = fontdb::Database::new();
     db.load_system_fonts();
     svg_tree.postprocess(PostProcessingSteps::default(), &db);
 
     // ________________________________________________________________________________
     // - Convert the usvg:Tree to a PDF Vec<u8>
-    let pdf_bytes = svg2pdf::convert_tree(&svg_tree, svg2pdf::Options::default())
-        .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+    let pdf_bytes = svg2pdf::convert_tree(&svg_tree, svg2pdf::Options::default());
 
     // ________________________________________________________________________________
     // Write to a file
@@ -62,24 +59,6 @@ fn get_pdf_path_from_svg_path(
 
     Ok(())
 }
-
-// // ________________________________________________________________________________
-// #[pyfunction]
-// fn get_pdf_bytes_from_svg_string(svg_string: String) -> PyResult<Vec<u8>> {
-//     // Start the timer
-//     // let start: Instant = Instant::now();
-//
-//     // ________________________________________________________________________________
-//     // Convert the SVG string to a PDF Vec<u8>
-//     let pdf: Vec<u8> = svg2pdf::convert_str(&svg_string, svg2pdf::Options::default())
-//         .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
-//
-//     // Stop the timer
-//     // let duration: Duration = start.elapsed();
-//     // println!("- SVG-to-PDF TIME: {:?}", duration);
-//
-//     Ok(pdf)
-// }
 
 // ________________________________________________________________________________
 // --- Converts the SVG string to a PDF Vec<u8>
@@ -96,24 +75,20 @@ fn get_pdf_bytes_from_svg_string(svg_string: String) -> PyResult<Vec<u8>> {
 
     // ________________________________________________________________________________
     // - Create usvg::Options with default settings
-    let options = svg2pdf::usvg::Options::default()
-        .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+    let options = svg2pdf::usvg::Options::default();
     
-
     // - Create usvg::Tree from the SVG string
     let mut svg_tree = svg2pdf::usvg::Tree::from_str(&svg_string, &options)
         .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
 
     // - Create a font database and load system fonts
-    let mut db = fontdb::Database::new()
-        .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+    let mut db = fontdb::Database::new();
     db.load_system_fonts();
     svg_tree.postprocess(PostProcessingSteps::default(), &db);
 
     // ________________________________________________________________________________
     // - Convert the usvg:Tree to a PDF Vec<u8>
-    let pdf_bytes = svg2pdf::convert_tree(&svg_tree, svg2pdf::Options::default())
-        .map_err(|e| PyErr::new::<pyo3::exceptions::PyValueError, _>(e.to_string()))?;
+    let pdf_bytes = svg2pdf::convert_tree(&svg_tree, svg2pdf::Options::default());
 
     // - Stop the timer
     // let duration: Duration = start.elapsed();
