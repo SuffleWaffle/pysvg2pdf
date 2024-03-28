@@ -88,7 +88,7 @@ fn get_pdf_bytes_from_svg_string(
 // ________________________________________________________________________________
 // --- Python module setup ---
 #[pymodule]
-fn pysvg2pdf(_py: Python, m: &PyModule) -> PyResult<()> {
+fn pysvg2pdf(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(get_pdf_path_from_svg_path, m)?)?;
     m.add_function(wrap_pyfunction!(get_pdf_bytes_from_svg_string, m)?)?;
     Ok(())
