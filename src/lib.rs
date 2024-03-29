@@ -14,7 +14,7 @@ use svg2pdf::usvg::{fontdb, PostProcessingSteps, TreeParsing, TreePostProc};
 // >>>> ********************************************************************************
 
 // ________________________________________________________________________________
-// --- Converts the SVG file to PDF file ---w
+// --- Converts the SVG file to PDF file ---
 #[pyfunction]
 fn get_pdf_path_from_svg_path(
     input_filepath: String,
