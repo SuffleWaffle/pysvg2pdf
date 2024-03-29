@@ -50,7 +50,7 @@ fn get_pdf_path_from_svg_path(
     // let duration: Duration = start.elapsed();
     // println!("- FILEPATH: {:} \n- TIME: {:?}", &input_filepath, duration);
 
-    Ok(())
+    return Ok(());
 }
 
 // ________________________________________________________________________________
@@ -82,7 +82,7 @@ fn get_pdf_bytes_from_svg_string(
     // let duration: Duration = start.elapsed();
     // println!("- SVG-to-PDF TIME: {:?}", duration);
 
-    Ok(pdf_bytes)
+    return Ok(pdf_bytes);
 }
 
 // ________________________________________________________________________________
